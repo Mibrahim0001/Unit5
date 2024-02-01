@@ -36,16 +36,12 @@ public class CurrentAccount extends Account{
 
     @Override
     public double calculateInterests() {
-        if(super.getSaldo() >= 1500) return getSaldo()*(5.0/100);
-        return getSaldo()*(1.0/100);
+        if(super.getSaldo() >= 1500) return 5;
+        return 1;
     }
 
     @Override
     public double getFinalBalance() {
-        double gastos = transactionReceipt();
-        double intereses = calculateInterests();
-
-        return getSaldo() - (gastos + intereses);
-
+        return 0;
     }
 }

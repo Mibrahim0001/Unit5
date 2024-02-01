@@ -12,23 +12,13 @@ public class SavingAccount extends  Account{
         this.maintenanceFee = maintenanceFee;
     }
 
-    public double getMaintenanceFee() {
-        return maintenanceFee;
-    }
-
-    public void setMaintenanceFee(double maintenanceFee) {
-        this.maintenanceFee = maintenanceFee;
-    }
-
     @Override
     public double calculateInterests() {
-        return super.getSaldo() * (super.getTasay()/100);
+        return super.getSaldo() * super.getTasay();
     }
 
     @Override
     public double getFinalBalance() {
-        // Calculamos los intereses
-        double intereses = calculateInterests();
-        return super.getSaldo() - (maintenanceFee+intereses);
+        return super.getSaldo()-calculateInterests();
     }
 }
